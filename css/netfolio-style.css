@@ -31,7 +31,37 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #e50914;
+    z-index: 9999;
+    transition: width 0.2s ease-out;
+}
+.model-container {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
 
+#3d-model-container {
+    width: 100%;
+    height: 400px;
+    background: transparent;
+    position: relative;
+}
+
+#3d-model-container canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;

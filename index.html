@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="scroll-progress-bar"></div>
     <!-- Skip to Content Link for Accessibility -->
      
     <a href="#home" class="skip-to-content">Skip to Content</a>
@@ -64,6 +65,9 @@
 
     <!-- About Section -->
     <section class="Netfolio-section" id="about">
+        <section class="about" id="about">
+    <div class="about-container">
+        
         <div class="container">
             <div class="section-header">
                 <h2>About Me</h2>
@@ -462,6 +466,14 @@
             }
         });
     </script>
+        <script>
+            window.addEventListener('scroll', function() {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.querySelector('.scroll-progress-bar').style.width = scrolled + '%';
+            });
+        </script>
 </body>
 </html>
 
