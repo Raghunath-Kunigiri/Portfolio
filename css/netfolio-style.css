@@ -2,9 +2,9 @@
 
 /* Base Styles & Variables */
 :root {
-    --Netfolio-red: #e50914;
-    --Netfolio-black: #000000;
-    --Netfolio-dark-gray: #141414;
+    --Netfolio-red: #607ebc;
+    --Netfolio-black: #d1e0d7;
+    --Netfolio-dark-gray: #d1e0d7;
     --Netfolio-medium-gray: #222222;
     --Netfolio-light-gray: #303030;
     --Netfolio-white: #ffffff;
@@ -37,7 +37,7 @@ body {
     left: 0;
     width: 0;
     height: 3px;
-    background: #e50914;
+    background: #f7eff0;
     z-index: 9999;
     transition: width 0.2s ease-out;
 }
@@ -661,6 +661,7 @@ img {
 .footer-logo h2 {
     color: var(--Netfolio-red);
     font-size: 28px;
+    
 }
 
 .footer-links ul {
@@ -766,4 +767,22 @@ img {
     .skills-container {
         grid-template-columns: 1fr;
     }
+}
+/* Name rotation animation */
+@keyframes nameFade {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.name-fade {
+    animation: nameFade 0.5s ease;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    transition: opacity 0.3s ease;
 }

@@ -263,3 +263,71 @@
         color: #333;
     }
 }
+/* Mobile Navigation Styles */
+@media screen and (max-width: 768px) {
+    .Netfolio-header .container {
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .mobile-menu-toggle {
+        display: block !important;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    
+    .mobile-menu-toggle.active i {
+        transform: rotate(90deg);
+    }
+    
+    .Netfolio-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        max-width: 250px;
+        height: 100vh;
+        background-color: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        padding: 80px 20px 20px;
+        transition: right 0.3s ease;
+        z-index: 999;
+        box-shadow: none;
+        overflow-y: auto;
+    }
+    
+    .Netfolio-nav.active {
+        right: 0;
+        background-color: transparent !important; /* Force transparency when active */
+    }
+    
+    .Netfolio-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: transparent; /* Ensure ul background is transparent */
+    }
+    
+    .Netfolio-nav ul li {
+        width: 20%;
+        margin: 0;
+        padding: 2px 0;
+        border-bottom: transparent;
+       
+    }
+    
+    .Netfolio-nav ul li a {
+        display: block;
+        padding: 8px 0;
+        font-size: 16px;
+        color: #ffffff;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+       
+    }
+}

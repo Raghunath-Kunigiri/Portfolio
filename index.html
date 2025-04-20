@@ -50,7 +50,7 @@
         <div class="hero-vignette"></div>
         <div class="hero-content">
             <div class="hero-info">
-                <h1 class="hero-title">Raghunath Kunigiri</h1>
+                <h1 class="hero-title" id="multilingual-name">Raghunath Kunigiri</h1>
                 <p class="hero-tagline">Computer Science Graduate with expertise in Data Analysis, Game Development, and Regulatory Compliance</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="Netfolio-btn">View My Work</a>
@@ -254,7 +254,8 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="Netfolio-section" id="skills">
+       <!-- Skills Section -->
+       <section class="Netfolio-section" id="skills">
         <div class="container">
             <div class="section-header">
                 <h2>Skills & Expertise</h2>
@@ -282,7 +283,7 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <h4>Power BI</h4>
+                            <h4>Google Sheets</h4>
                             <span class="skill-level">Advanced</span>
                         </div>
                         <div class="skill-bar">
@@ -290,6 +291,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="skills-category">
                     <h3>Programming</h3>
                     <div class="skill-item">
@@ -310,48 +312,9 @@
                             <div class="skill-progress" style="width: 75%;"></div>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <h4>C#</h4>
-                            <span class="skill-level">Intermediate</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%;"></div>
-                        </div>
-                    </div>
+                    
                 </div>
                 
-                <div class="skills-category">
-                    <h3>Cloud & DevOps</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <h4>AWS Services</h4>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <h4>Docker & Kubernetes</h4>
-                            <span class="skill-level">Intermediate</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <h4>CI/CD Pipeline</h4>
-                            <span class="skill-level">Intermediate</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%;"></div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="skills-category">
                     <h3>Databases & Tools</h3>
                     <div class="skill-item">
@@ -372,15 +335,21 @@
                             <div class="skill-progress" style="width: 80%;"></div>
                         </div>
                     </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Cloud</h3>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <h4>Salesforce</h4>
-                            <span class="skill-level">Intermediate</span>
+                            <h4>AWS Services</h4>
+                            <span class="skill-level">Advanced</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%;"></div>
+                            <div class="skill-progress" style="width: 85%;"></div>
                         </div>
                     </div>
+                    
+                    
                 </div>
             </div>
         </div>
@@ -443,9 +412,9 @@
                     </ul>
                 </div>
                 <div class="footer-social">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/raghunath-kunigiri/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Raghunath9493" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <!-- <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a> -->
                 </div>
             </div>
             <div class="footer-bottom">
@@ -454,8 +423,41 @@
         </div>
     </footer>
     <script>
-        // Handle form submission status
+        // Name in different languages
+        const nameTranslations = [
+            // { language: 'English', name: 'Raghunath Kunigiri' },
+            { language: 'Spanish', name: 'Ragunath Kunigiri' },
+            { language: 'Telugu', name: 'రఘునాథ్ కునిగిరి' },
+            { language: 'Hindi', name: 'रघुनाथ कुनिगिरी' },
+            { language: 'Tamil', name: 'ரகுநாத் குனிகிரி' },
+            { language: 'Kannada', name: 'ರಘುನಾಥ್ ಕುನಿಗಿರಿ' },
+            { language: 'Chinese', name: '拉古纳斯 库尼吉里' },
+            { language: 'Russian', name: 'Рагунат Кунигири' },
+            // { language: 'German', name: 'Raghunath Kunigiri' }
+        ];
+    
+        // Function to rotate through names
+        function rotateNames() {
+            const nameElement = document.getElementById('multilingual-name');
+            let currentIndex = 0;
+    
+            setInterval(() => {
+                nameElement.innerHTML = nameTranslations[currentIndex].name;
+                nameElement.setAttribute('data-language', nameTranslations[currentIndex].language);
+                
+                // Optional: Add a fade effect
+                nameElement.classList.add('name-fade');
+                setTimeout(() => nameElement.classList.remove('name-fade'), 250);
+                
+                currentIndex = (currentIndex + 1) % nameTranslations.length;
+            }, 2000); // Change every 2 seconds (2000ms)
+        }
+    
+        // Start the name rotation when the page loads
         document.addEventListener('DOMContentLoaded', function() {
+            rotateNames();
+            
+            // Rest of your existing DOMContentLoaded code
             const urlParams = new URLSearchParams(window.location.search);
             const status = urlParams.get('status');
             
@@ -464,16 +466,35 @@
             } else if (status === 'error') {
                 alert('Sorry, there was an error sending your message. Please try again later.');
             }
+    
+            // Mobile menu toggle functionality
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.Netfolio-nav');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+    
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('.Netfolio-nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                });
+            });
         });
     </script>
-        <script>
-            window.addEventListener('scroll', function() {
-                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (winScroll / height) * 100;
-                document.querySelector('.scroll-progress-bar').style.width = scrolled + '%';
-            });
-        </script>
+<script>
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.querySelector('.scroll-progress-bar').style.width = scrolled + '%';
+    });
+</script>
+
 </body>
 </html>
 
