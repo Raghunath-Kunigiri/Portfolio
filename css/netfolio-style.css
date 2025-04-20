@@ -2,17 +2,17 @@
 
 /* Base Styles & Variables */
 :root {
-    --Netfolio-red: #607ebc;
-    --Netfolio-black: #d1e0d7;
-    --Netfolio-dark-gray: #d1e0d7;
-    --Netfolio-medium-gray: #222222;
-    --Netfolio-light-gray: #303030;
-    --Netfolio-white: #ffffff;
-    --Netfolio-text-gray: #999999;
-    --Netfolio-hover-gray: #424242;
+    --Netfolio-red: #f3f2f2;
+    --Netfolio-black: #1d503a; /* Updated to your requested background color */
+    --Netfolio-dark-gray: #143d2c; /* Slightly darker shade for contrast */
+    --Netfolio-medium-gray: #1a4935; /* Medium shade */
+    --Netfolio-light-gray: #266347; /* Lighter shade */
+    --Netfolio-white: #faf5ee; /* Updated to your requested text color */
+    --Netfolio-text-gray: #e5e0d9; /* Slightly darker than white for secondary text */
+    --Netfolio-hover-gray: #2d7253; /* Slightly lighter for hover states */
     --Netfolio-shadow: rgba(0, 0, 0, 0.75);
-    --Netfolio-gradient: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.8) 100%);
-    --Netfolio-vignette: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.8) 100%);
+    --Netfolio-gradient: linear-gradient(to top, rgba(29, 80, 58, 0.9) 0%, rgba(29, 80, 58, 0.4) 60%, rgba(29, 80, 58, 0.8) 100%);
+    --Netfolio-vignette: radial-gradient(circle, transparent 20%, rgba(20, 61, 44, 0.8) 100%);
     --Netfolio-card-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     --Netfolio-transition: all 0.3s ease;
     --Netfolio-border-radius: 4px;
