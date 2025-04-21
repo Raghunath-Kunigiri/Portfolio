@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/accessibility.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="scroll-progress-bar"></div>
@@ -25,7 +26,7 @@
     <header class="Netfolio-header">
         <div class="container">
             <div class="Netfolio-logo">
-                <h1>RK</h1>
+                <h1>Raghunath Kunigiri</h1>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
@@ -39,6 +40,7 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    
                 </ul>
             </nav>
         </div>
@@ -54,7 +56,8 @@
                 <p class="hero-tagline">Computer Science Graduate with expertise in Data Analysis, Game Development, and Regulatory Compliance</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="Netfolio-btn">View My Work</a>
-                    <a href="#contact" class="Netfolio-btn Netfolio-btn-secondary">Contact Me</a>
+                    <a href="#" class="Netfolio-btn" id="resume-btn">Resume</a>
+                    <a href="#contact" class="Netfolio-btn ">Contact Me</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -62,8 +65,22 @@
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
+    <!-- Resume Section -->
+    <section>
+        <div id="resume-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>My Resume</h2>
+                <div class="resume-container">
+                    <iframe src="images/RAGHUNATH_KUNIGIRI.pdf" width="100%" height="500px"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <a href="images/RAGHUNATH_KUNIGIRI.pdf" download class="Netfolio-btn">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- About Section -->
     <section class="Netfolio-section" id="about">
         <section class="about" id="about">
     <div class="about-container">
@@ -100,15 +117,16 @@
                 <div class="carousel-container">
                     <div class="carousel-card">
                         <div class="card-content">
-                            <span class="card-date">2023 - 2025</span>
                             <h3>Master's in Computer Science</h3>
+                            <span class="card-date">2023 - 2025</span>
                             <p>Saint Louis University, St. Louis, MO, USA</p>
                         </div>
                     </div>
                     <div class="carousel-card">
                         <div class="card-content">
-                            <span class="card-date">2018 - 2022</span>
+                            
                             <h3>Bachelor's in Computer Science</h3>
+                            <span class="card-date">2018 - 2022</span>
                             <p>Bharath Institute of Higher Education and Research, Chennai, TN, India</p>
                         </div>
                     </div>
@@ -179,6 +197,10 @@
                 <div class="carousel-title">
                     <h3>Featured Projects</h3>
                 </div>
+                <div class="carousel-navigation">
+                    <button class="carousel-arrow carousel-arrow-left" aria-label="Previous projects">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
                 <div class="carousel-container">
                     <div class="project-card">
                         <div class="card-image">
@@ -186,15 +208,32 @@
                             <img src="https://via.placeholder.com/400x225/1a1a1a/ffffff?text=Budget+Management" alt="Budget Management System">
                         </div>
                         <div class="card-content">
+                            <h3>Health Care Compass | Hospital Recommendation</h3>
+                            <p>Designed and developed a budget hospital recommendation website using HTML, CSS, and JavaScript, leveraging Synthia data to compare treatments and costs across hospitals, Data visualize insights with pie charts.</p>
+                            <div class="card-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Data Visualization</span>
+                            </div>
+                            <a href="https://github.com/Raghunath9493/Health-Care-Compass" class="Netfolio-btn Netfolio-btn-sm">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="card-image">
+                            <div class="card-overlay"></div>
+                            <img src="https://via.placeholder.com/400x225/1a1a1a/ffffff?text=Budget+Management" alt="Budget Management System">
+                        </div>
+                        <div class="card-content">
                             <h3>Personal Budget Management System</h3>
-                            <p>A web application for managing personal finances and forecasting savings with intuitive visualizations.</p>
+                            <p>Developed a full-stack web application using Python (Flask) and MongoDB for personal budget management and savings forecasting, featuring financial data visualization, secure cross-device access, and a profanity-filtered chat system.</p>
                             <div class="card-tags">
                                 <span class="tag">Python</span>
                                 <span class="tag">Flask</span>
                                 <span class="tag">MongoDB</span>
                                 <span class="tag">Data Visualization</span>
                             </div>
-                            <a href="#" class="Netfolio-btn Netfolio-btn-sm">View Project</a>
+                            <a href="https://github.com/Raghunath9493/Budget_Management_Chat" class="Netfolio-btn Netfolio-btn-sm">View Project</a>
                         </div>
                     </div>
                     <div class="project-card">
@@ -204,14 +243,14 @@
                         </div>
                         <div class="card-content">
                             <h3>Material Donor Mutual Assist</h3>
-                            <p>A user-centered web application connecting donors with recipients using modern design principles.</p>
+                            <p>A user-centered web application built with JavaScript, HTML, and CSS to connect donors with recipients through features like user registration, donation listings, and intelligent matching, promoting efficient material redistribution and community support.</p>
                             <div class="card-tags">
                                 <span class="tag">JavaScript</span>
                                 <span class="tag">HTML</span>
                                 <span class="tag">CSS</span>
                                 <span class="tag">Figma</span>
                             </div>
-                            <a href="#" class="Netfolio-btn Netfolio-btn-sm">View Project</a>
+                            <a href="https://github.com/slu-csci-5030/material-donor-mutual-assist" class="Netfolio-btn Netfolio-btn-sm">View Project</a>
                         </div>
                     </div>
                     <div class="project-card">
@@ -220,35 +259,21 @@
                             <img src="https://via.placeholder.com/400x225/1a1a1a/ffffff?text=Katamari+Game" alt="Katamari Damacy Game">
                         </div>
                         <div class="card-content">
-                            <h3>Katamari Damacy (Game)</h3>
-                            <p>An immersive browser-based game using JavaScript and WebGL API with interactive UI elements.</p>
+                            <h3>Katamari Damacy (Web-Game)</h3>
+                            <p>Developed a web-based game inspired by Katamari Damacy using JavaScript (Three.js) and WebGL, incorporating collision detection, background music, and immersive visuals, with project management handled via Git for smooth delivery.</p>
                             <div class="card-tags">
                                 <span class="tag">JavaScript</span>
                                 <span class="tag">Three.js</span>
                                 <span class="tag">WebGL</span>
                                 <span class="tag">Game Development</span>
                             </div>
-                            <a href="#" class="Netfolio-btn Netfolio-btn-sm">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="card-image">
-                            <div class="card-overlay"></div>
-                            <img src="https://via.placeholder.com/400x225/1a1a1a/ffffff?text=Air+Pollution" alt="Air Pollution Prediction">
-                        </div>
-                        <div class="card-content">
-                            <h3>Air Pollution Prediction</h3>
-                            <p>Machine learning model using Random Forest and XGBoost to predict pollution levels with 78% accuracy.</p>
-                            <div class="card-tags">
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">Data Analysis</span>
-                                <span class="tag">Environmental</span>
-                            </div>
-                            <a href="#" class="Netfolio-btn Netfolio-btn-sm">View Project</a>
+                            <a href="https://github.com/Raghunath9493/Katamari_Damacy" class="Netfolio-btn Netfolio-btn-sm">View Project</a>
                         </div>
                     </div>
                 </div>
+                <button class="carousel-arrow carousel-arrow-right" aria-label="Next projects">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -522,4 +547,69 @@
             alert('Sorry, there was an error sending your message. Please try again later.');
         }
     }
+</script>
+
+<script>
+    // Add this to your existing JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set up project carousel navigation
+        const projectCarousels = document.querySelectorAll('.carousel-navigation');
+        
+        projectCarousels.forEach(carousel => {
+            const container = carousel.querySelector('.carousel-container');
+            const leftArrow = carousel.querySelector('.carousel-arrow-left');
+            const rightArrow = carousel.querySelector('.carousel-arrow-right');
+            
+            // Calculate scroll amount (width of one card + gap)
+            const scrollAmount = 320; // 300px card width + 20px gap
+            
+            if (leftArrow) {
+                leftArrow.addEventListener('click', () => {
+                    container.scrollBy({
+                        left: -scrollAmount,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            if (rightArrow) {
+                rightArrow.addEventListener('click', () => {
+                    container.scrollBy({
+                        left: scrollAmount,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    });
+</script>
+<!-- <---Resume model --> 
+<script>
+    // Resume Modal Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const resumeBtn = document.getElementById('resume-btn');
+        const resumeModal = document.getElementById('resume-modal');
+        const closeModal = document.querySelector('.close-modal');
+        
+        // Open modal when resume button is clicked
+        resumeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            resumeModal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        });
+        
+        // Close modal when X is clicked
+        closeModal.addEventListener('click', function() {
+            resumeModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        });
+        
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(e) {
+            if (e.target === resumeModal) {
+                resumeModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        });
+    });
 </script>
