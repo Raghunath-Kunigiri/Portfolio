@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Updated EmailJS SDK to v4 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
 </head>
 <body>
     <div class="scroll-progress-bar"></div>
@@ -450,9 +453,10 @@
                             </a>
                         </div>
                     </div>
+                    <!-- Update the contact form section -->
                     <div class="contact-form">
                         <h3>Send 'Hi :)' & make my inbox sing!</h3>
-                        <form id="contactForm" onsubmit="submitForm(event)">
+                        <form id="contactForm">
                             <div class="form-group">
                                 <input type="text" id="name" name="name" placeholder="Your Name" required>
                             </div>
@@ -487,7 +491,7 @@
                 
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Raghunath Kunigiri. All Rights Reserved.</p>
+                <p>&copy; 2025 Raghunath Kunigiri. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -563,37 +567,9 @@
         document.querySelector('.scroll-progress-bar').style.width = scrolled + '%';
     });
 </script>
-
+<script src="js/contact.js"></script>
 </body>
 </html>
-
-<script>
-    async function submitForm(event) {
-        event.preventDefault();
-        
-        const formData = new URLSearchParams(new FormData(event.target));
-        
-        try {
-            const response = await fetch('http://localhost:8000', {
-                method: 'POST',
-                body: formData
-            });
-            
-            const result = await response.json();
-            
-            if (result.status === 'success') {
-                alert('Thank you for your message! I will get back to you soon.');
-                event.target.reset();
-            } else {
-                alert('Sorry, there was an error sending your message. Please try again later.');
-            }
-        } catch (error) {
-            alert('Sorry, there was an error sending your message. Please try again later.');
-        }
-    }
-</script>
-
-
 <!-- <---Resume model --> 
 <script>
     // Resume Modal Functionality
