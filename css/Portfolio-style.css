@@ -1,21 +1,23 @@
-/* Netfolio-Style Portfolio CSS */
+/* Portfolio-Style Portfolio CSS */
 
 /* Base Styles & Variables */
 :root {
-    --Netfolio-red: #f3f2f2;
-    --Netfolio-black: #2e805c; /* Updated to your requested background color */
-    --Netfolio-dark-gray: #96dabd; /* Slightly darker shade for contrast */
-    --Netfolio-medium-gray: #1a4935; /* Medium shade */
-    --Netfolio-light-gray: #266347; /* Lighter shade */
-    --Netfolio-white: #faf5ee; /* Updated to your requested text color */
-    --Netfolio-text-gray: #e5e0d9; /* Slightly darker than white for secondary text */
-    --Netfolio-hover-gray: #2d7253; /* Slightly lighter for hover states */
-    --Netfolio-shadow: rgba(0, 0, 0, 0.75);
-    --Netfolio-gradient: linear-gradient(to top, rgba(29, 80, 58, 0.9) 0%, rgba(29, 80, 58, 0.4) 60%, rgba(29, 80, 58, 0.8) 100%);
-    --Netfolio-vignette: radial-gradient(circle, transparent 20%, rgba(20, 61, 44, 0.8) 100%);
-    --Netfolio-card-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    --Netfolio-transition: all 0.3s ease;
-    --Netfolio-border-radius: 4px;
+    --Portfolio-primary: #caebf0; /* Lightest blue */
+    --Portfolio-secondary: #90E0EF; /* Light blue */
+    --Portfolio-accent: #0077B6; /* Medium blue */
+    --Portfolio-text-primary: #FFFFFF
+    --Portfolio-text-secondary: rgba(255, 255, 255, 0.8);
+    --Portfolio-hover: #90E0EF; /* Light blue for hover states */
+    --Portfolio-shadow: rgba(3, 4, 94, 0.1); /* Dark blue shadow with opacity */
+    --Portfolio-gradient: linear-gradient(to top, rgba(202, 240, 248, 0.9) 0%, rgba(202, 240, 248, 0.4) 60%, rgba(202, 240, 248, 0.8) 100%);
+    --Portfolio-vignette: radial-gradient(circle, transparent 20%, rgba(144, 224, 239, 0.8) 100%);
+    --Portfolio-card-shadow: 0 4px 12px rgba(3, 4, 94, 0.1);
+    --Portfolio-transition: all 0.3s ease;
+    --Portfolio-border-radius: 8px;
+}
+.Portfolio-logo {
+    color: #03045E;
+    
 }
 
 * {
@@ -26,26 +28,28 @@
 }
 
 body {
-    background-color: var(--Netfolio-black);
-    color: var(--Netfolio-white);
+    background-color: var(--Portfolio-primary);
+    color: var(--Portfolio-text-primary);
     line-height: 1.6;
     overflow-x: hidden;
 }
+
 .scroll-progress-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 0;
     height: 3px;
-    background: #f7eff0;
+    background: var(--Portfolio-accent);
     z-index: 9999;
     transition: width 0.2s ease-out;
 }
+
 .model-container {
     width: 100%;
     height: 400px;
     margin: 20px 0;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.05);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -62,6 +66,7 @@ body {
     height: 100%;
     display: block;
 }
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -69,13 +74,13 @@ body {
 }
 
 a {
-    color: var(--Netfolio-white);
+    color: var(--Portfolio-accent);
     text-decoration: none;
-    transition: var(--Netfolio-transition);
+    transition: var(--Portfolio-transition);
 }
 
 a:hover {
-    color: var(--Netfolio-red);
+    color: var(--Portfolio-hover);
 }
 
 ul {
@@ -87,77 +92,73 @@ img {
     height: auto;
 }
 
-/* Netfolio Header/Navigation */
-.Netfolio-header {
-    background-color: var(--Netfolio-black);
+/* Portfolio Header/Navigation */
+.Portfolio-header {
+    background-color: var(--Portfolio-primary);
     padding: 20px 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 2px 4px var(--Portfolio-shadow);
     transition: background-color 0.3s ease;
 }
 
-.Netfolio-header.scrolled {
-    background-color: var(--Netfolio-black);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+.Portfolio-header.scrolled {
+    background-color: var(--Portfolio-primary);
 }
 
-.Netfolio-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.Netfolio-logo h1 {
-    color: var(--Netfolio-red);
-    font-size: 32px;
+.Portfolio-logo h1 {
+    color: var(--Portfolio-text-primary);
+    font-size: 28px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
-.Netfolio-nav ul {
+.Portfolio-nav ul {
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
-.Netfolio-nav a {
-    font-size: 14px;
+.Portfolio-nav a {
+    font-size: 16px;
     font-weight: 500;
+    color: var(--Portfolio-text-primary);
     position: relative;
     padding: 5px 0;
 }
 
-.Netfolio-nav a:hover {
-    color: var(--Netfolio-white);
+.Portfolio-nav a:hover,
+.Portfolio-nav a.active {
+    color: var(--Portfolio-accent);
 }
 
-.Netfolio-nav a::after {
+.Portfolio-nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--Netfolio-red);
+    background-color: var(--Portfolio-accent);
     transition: width 0.3s ease;
 }
 
-.Netfolio-nav a:hover::after,
-.Netfolio-nav a.active::after {
+.Portfolio-nav a:hover::after,
+.Portfolio-nav a.active::after {
     width: 100%;
 }
 
-/* Netfolio Hero Banner */
-.Netfolio-hero {
+/* Portfolio Hero Banner */
+.Portfolio-hero {
     height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
     margin-top: 0;
     overflow: hidden;
-    background-color: var(--Netfolio-dark-gray);
+    background-color: var(--Portfolio-secondary);
 }
 
 .hero-backdrop {
@@ -166,7 +167,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--Netfolio-gradient);
+    background: var(--Portfolio-gradient);
     z-index: 1;
 }
 
@@ -176,7 +177,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--Netfolio-vignette);
+    background: var(--Portfolio-vignette);
     z-index: 2;
 }
 
@@ -201,12 +202,13 @@ img {
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
+    color: var(--Portfolio-text-primary);
 }
 
 .hero-tagline {
     font-size: 18px;
     margin-bottom: 30px;
-    color: var(--Netfolio-white);
+    color: var(--Portfolio-text-secondary);
 }
 
 .hero-buttons {
@@ -219,8 +221,8 @@ img {
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid var(--Netfolio-white);
-    box-shadow: var(--Netfolio-card-shadow);
+    border: 4px solid var(--Portfolio-primary);
+    box-shadow: var(--Portfolio-card-shadow);
 }
 
 .hero-image img {
@@ -229,53 +231,51 @@ img {
     object-fit: cover;
 }
 
-/* Netfolio Buttons */
-.Netfolio-btn {
+/* Portfolio Buttons */
+.Portfolio-btn {
     display: inline-block;
-    background-color: var(--Netfolio-white);
-    color: var(--Netfolio-black);
+    background-color: var(--Portfolio-accent);
+    color: var(--Portfolio-primary);
     padding: 12px 24px;
-    border-radius: var(--Netfolio-border-radius);
+    border-radius: var(--Portfolio-border-radius);
     font-weight: 500;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    transition: var(--Netfolio-transition);
+    transition: var(--Portfolio-transition);
     text-align: center;
 }
 
-.Netfolio-btn:hover {
-    background-color: #e9e4d7;
+.Portfolio-btn:hover {
+    background-color: var(--Portfolio-hover);
     transform: translateY(-2px);
-    color: var(--Netfolio-black);
 }
 
-.Netfolio-btn-secondary {
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 1px solid var(--Netfolio-white);
-    color: var(--Netfolio-white);
+.Portfolio-btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--Portfolio-accent);
+    color: var(--Portfolio-accent);
 }
 
-.Netfolio-btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: var(--Netfolio-white);
-
+.Portfolio-btn-secondary:hover {
+    background-color: var(--Portfolio-accent);
+    color: var(--Portfolio-primary);
 }
 
-.Netfolio-btn-sm {
+.Portfolio-btn-sm {
     padding: 8px 16px;
     font-size: 14px;
 }
 
-/* Netfolio Sections */
-.Netfolio-section {
+/* Portfolio Sections */
+.Portfolio-section {
     padding: 80px 0;
-    background-color: var(--Netfolio-black);
+    background-color: var(--Portfolio-primary);
     position: relative;
 }
 
-.Netfolio-section:nth-child(odd) {
-    background-color: var(--Netfolio-dark-gray);
+.Portfolio-section:nth-child(odd) {
+    background-color: var(--Portfolio-secondary);
 }
 
 .section-header {
@@ -286,6 +286,7 @@ img {
 .section-header h2 {
     font-size: 32px;
     font-weight: 700;
+    color: var(--Portfolio-text-primary);
     position: relative;
     display: inline-block;
     padding-bottom: 10px;
@@ -299,11 +300,11 @@ img {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: var(--Netfolio-red);
+    background-color: var(--Portfolio-accent);
 }
 
-/* Netfolio Carousel */
-.Netfolio-carousel {
+/* Portfolio Carousel */
+.Portfolio-carousel {
     margin-bottom: 40px;
 }
 
@@ -314,7 +315,7 @@ img {
 .carousel-title h3 {
     font-size: 28px;
     font-weight: 500;
-    color: var(--Netfolio-black);
+    color: var(--Portfolio-text-primary);
 }
 
 .carousel-container {
@@ -323,40 +324,41 @@ img {
     overflow-x: auto;
     padding: 20px 0;
     scrollbar-width: none;
-
 }
 
 .carousel-container::-webkit-scrollbar {
-    display: none; 
+    display: none;
 }
-* Project Cards */
+
+/* Project Cards */
 .project-card {
     width: 300px;
     flex: 0 0 auto;
-    background-color: var(--Netfolio-medium-gray);
-    border-radius: var(--Netfolio-border-radius);
+    background-color: var(--Portfolio-secondary);
+    border-radius: var(--Portfolio-border-radius);
     overflow: hidden;
-    transition: var(--Netfolio-transition);
-    box-shadow: var(--Netfolio-card-shadow);
+    transition: var(--Portfolio-transition);
+    box-shadow: var(--Portfolio-card-shadow);
 }
 
 .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
-/* Update projects section to center and wrap properly */
+
 #projects .carousel-container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     gap: 20px;
-    overflow-x: visible;
+    overflow-x: auto;
+    padding: 20px 0;
+    scroll-behavior: smooth;
 }
 
 #projects .project-card {
-    width: calc(33.33% - 20px);
-    min-width: 250px;
-    max-width: 30px;
+    width: 300px;
+    flex: 0 0 auto;
 }
 
 .card-image {
@@ -364,56 +366,89 @@ img {
     position: relative;
     overflow: hidden;
 }
-/* Netfolio Cards */
+
+/* Portfolio Cards */
 .carousel-card,
 .project-card,
 .experience-card,
 .certificate-card {
     flex: 0 0 auto;
     width: 300px;
-    background-color: var(--Netfolio-medium-gray);
-    border-radius: var(--Netfolio-border-radius);
+    background-color: var(--Portfolio-secondary);
+    border-radius: var(--Portfolio-border-radius);
     overflow: hidden;
-    transition: var(--Netfolio-transition);
-    box-shadow: var(--Netfolio-card-shadow);
+    transition: var(--Portfolio-transition);
+    box-shadow: var(--Portfolio-card-shadow);
     margin-bottom: 20px;
 }
-/* For experience cards specifically */
+
 .experience-card {
-    min-height: 350px; /* Set a minimum height to make cards more uniform */
+    min-height: 350px;
     display: flex;
     flex-direction: column;
 }
 
 .experience-card .card-content {
-    flex: 1; /* Make content take up all available space */
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
-/* Center experience cards in their container */
+
 #experience .carousel-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
+
 #education .carousel-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 5px;
 }
+
 #education .carousel-card {
     width: calc(100% - 0px);
     max-width: 560px;
+}
+.experience-card {
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+#experience .carousel-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased from 20px for better spacing */
+}
+.experience-card .card-content ul li {
+    color: var(--Portfolio-text-secondary);
+    font-size: 16px;  /* Increased from 14px */
+    margin-bottom: 12px;  /* Increased from 8px */
+    position: relative;
+    line-height: 1.6;  /* Added for better readability */
+    padding-left: 5px;  /* Added for better spacing */
+}
+
+.experience-card .card-content ul {
+    padding-left: 25px;  /* Increased from 20px */
+    margin-bottom: 20px;  /* Increased from 15px */
+}
+
+.experience-card .card-content {
+    padding: 25px;  /* Increased from 20px */
 }
 
 .carousel-card:hover,
 .project-card:hover,
 .experience-card:hover,
 .certificate-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .card-content {
@@ -422,8 +457,8 @@ img {
 
 .card-date {
     display: inline-block;
-    background-color: var(--Netfolio-light-gray);
-    color: var(--Netfolio-white);
+    background-color: var(--Portfolio-accent);
+    color: var(--Portfolio-primary);
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 14px;
@@ -433,17 +468,17 @@ img {
 .card-content h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: var(--Netfolio-white);
+    color: var(--Portfolio-text-primary);
 }
 
 .card-content h4 {
     font-size: 16px;
-    color: var(--Netfolio-text-gray);
+    color: var(--Portfolio-text-secondary);
     margin-bottom: 15px;
 }
 
 .card-content p {
-    color: var(--Netfolio-text-gray);
+    color: var(--Portfolio-text-secondary);
     font-size: 14px;
     margin-bottom: 15px;
 }
@@ -454,7 +489,7 @@ img {
 }
 
 .card-content ul li {
-    color: var(--Netfolio-text-gray);
+    color: var(--Portfolio-text-secondary);
     font-size: 14px;
     margin-bottom: 8px;
     position: relative;
@@ -462,20 +497,9 @@ img {
 
 .card-content ul li::before {
     content: '•';
-    color: var(--Netfolio-red);
+    color: var(--Portfolio-accent);
     position: absolute;
     left: -15px;
-}
-
-/* Project Cards */
-.project-card {
-    width: 300px;
-}
-
-.card-image {
-    height: 170px;
-    position: relative;
-    overflow: hidden;
 }
 
 .card-overlay {
@@ -484,7 +508,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%);
     z-index: 1;
 }
 
@@ -509,8 +533,8 @@ img {
 }
 
 .tag {
-    background-color: var(--Netfolio-light-gray);
-    color: var(--Netfolio-text-gray);
+    background-color: var(--Portfolio-primary);
+    color: var(--Portfolio-text-secondary);
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 12px;
@@ -527,7 +551,7 @@ img {
     flex: 0 0 40%;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: var(--Netfolio-card-shadow);
+    box-shadow: var(--Portfolio-card-shadow);
 }
 
 .about-text {
@@ -537,14 +561,13 @@ img {
 .about-text h3 {
     font-size: 28px;
     margin-bottom: 20px;
-    color: var(--Netfolio-black);
+    color: var(--Portfolio-text-primary);
 }
 
 .about-text p {
-    color: var(--Netfolio-medium-gray);
+    color: var(--Portfolio-text-secondary);
     font-size: 18px;
     line-height: 1.6;
-    margin-bottom: 30px;
     margin-bottom: 20px;
 }
 
@@ -556,18 +579,18 @@ img {
 }
 
 .skills-category {
-    background-color: var(--Netfolio-medium-gray);
-    border-radius: var(--Netfolio-border-radius);
+    background-color: var(--Portfolio-secondary);
+    border-radius: var(--Portfolio-border-radius);
     padding: 25px;
-    box-shadow: var(--Netfolio-card-shadow);
+    box-shadow: var(--Portfolio-card-shadow);
 }
 
 .skills-category h3 {
     font-size: 22px;
     margin-bottom: 20px;
-    color: var(--Netfolio-white);
+    color: var(--Portfolio-text-primary);
     padding-bottom: 10px;
-    border-bottom: 1px solid var(--Netfolio-light-);
+    border-bottom: 1px solid var(--Portfolio-text-secondary);
 }
 
 .skill-item {
@@ -583,23 +606,24 @@ img {
 .skill-info h4 {
     font-size: 16px;
     font-weight: 400;
+    color: var(--Portfolio-text-primary);
 }
 
 .skill-level {
-    color: var(--Netfolio-red);
+    color: var(--Portfolio-accent);
     font-size: 14px;
 }
 
 .skill-bar {
     height: 6px;
-    background-color: var(--Netfolio-light-gray);
+    background-color: var(--Portfolio-primary);
     border-radius: 3px;
     overflow: hidden;
 }
 
 .skill-progress {
     height: 100%;
-    background-color: var(--Netfolio-red);
+    background-color: var(--Portfolio-accent);
     border-radius: 3px;
 }
 
@@ -614,11 +638,11 @@ img {
 .certificate-card {
     flex: 0 0 auto;
     width: 300px;
-    background-color: var(--Netfolio-medium-gray);
-    border-radius: var(--Netfolio-border-radius);
+    background-color: var(--Portfolio-secondary);
+    border-radius: var(--Portfolio-border-radius);
     overflow: hidden;
-    transition: var(--Netfolio-transition);
-    box-shadow: var(--Netfolio-card-shadow);
+    transition: var(--Portfolio-transition);
+    box-shadow: var(--Portfolio-card-shadow);
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -636,8 +660,8 @@ img {
 }
 
 .certificate-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Contact Section */
@@ -645,6 +669,7 @@ img {
     display: flex;
     gap: 50px;
 }
+
 .contact-form button {
     width: 100%;
     padding: 15px;
@@ -655,10 +680,10 @@ img {
 .contact-info,
 .contact-form {
     flex: 1;
-    background-color: var(--Netfolio-medium-gray);
-    border-radius: var(--Netfolio-border-radius);
+    background-color: var(--Portfolio-secondary);
+    border-radius: var(--Portfolio-border-radius);
     padding: 30px;
-    box-shadow: var(--Netfolio-card-shadow);
+    box-shadow: var(--Portfolio-card-shadow);
     display: flex;
     flex-direction: column;
 }
@@ -667,10 +692,11 @@ img {
 .contact-form h3 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: var(--Netfolio-white);
+    color: var(--Portfolio-text-primary);
     position: relative;
     padding-bottom: 15px;
 }
+
 .contact-info h3::after,
 .contact-form h3::after {
     content: '';
@@ -679,13 +705,15 @@ img {
     left: 0;
     width: 50px;
     height: 3px;
-    background-color: var(--Netfolio-red);
+    background-color: var(--Portfolio-accent);
 }
+
 .contact-info p {
-    color: var(--Netfolio-text-gray);
+    color: var(--Portfolio-text-secondary);
     margin-bottom: 30px;
     line-height: 1.6;
 }
+
 .contact-item {
     display: flex;
     flex-direction: column;
@@ -701,7 +729,7 @@ img {
 
 .contact-label i {
     font-size: 1.5em;
-    color: var(--Netfolio-red);
+    color: var(--Portfolio-accent);
 }
 
 .contact-label h3 {
@@ -717,15 +745,15 @@ img {
 .contact-link {
     font-size: 1.1em;
     margin-left: 34px;
-    color: var(--Netfolio-text-gray);
+    color: var(--Portfolio-text-secondary);
     text-decoration: none;
-    transition: var(--Netfolio-transition);
+    transition: var(--Portfolio-transition);
 }
 
 .contact-link:hover {
-    color: var(--Netfolio-white);
+    color: var(--Portfolio-accent);
 }
-/* Updated social links for contact section */
+
 .contact-social-links {
     display: flex;
     gap: 20px;
@@ -734,86 +762,25 @@ img {
     justify-content: center;
 }
 
-
 .contact-social-link {
     width: 60px;
     height: 60px;
-    background-color: var(--Netfolio-light-gray);
+    background-color: var(--Portfolio-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--Netfolio-transition);
+    transition: var(--Portfolio-transition);
 }
 
 .contact-social-link:hover {
-    background-color: var(--Netfolio-red);
+    background-color: var(--Portfolio-accent);
     transform: translateY(-5px);
 }
 
 .contact-social-link i {
-    color: var(--Netfolio-white);
+    color: var(--Portfolio-text-primary);
     font-size: 28px;
-}
-
-.contact-item {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.contact-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.contact-label i {
-    font-size: 1.5em;
-    color: #f5efef;
-}
-
-.contact-label h3 {
-    margin: 0;
-    font-size: 1.2em;
-}
-
-.contact-link {
-    font-size: 1.1em;
-    margin-left: 34px;  /* This aligns with the text after the icon */
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.contact-link:hover {
-    color: #f3eded;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.social-link {
-    width: 40px;
-    height: 40px;
-    background-color: var(--Netfolio-light-gray);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--Netfolio-transition);
-}
-
-.social-link:hover {
-    background-color: var(--Netfolio-red);
-    transform: translateY(-3px);
-}
-
-.social-link i {
-    color: var(--Netfolio-white);
 }
 
 /* Form Styles */
@@ -824,14 +791,15 @@ img {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding:  15px;
-    background-color: var(--Netfolio-light-gray);
-    border:1px solid transparent;
-    border-radius: var(--Netfolio-border-radius);
-    color: var(--Netfolio-white);
+    padding: 15px;
+    background-color: var(--Portfolio-primary);
+    border: 1px solid var(--Portfolio-text-secondary);
+    border-radius: var(--Portfolio-border-radius);
+    color: var(--Portfolio-text-primary);
     font-size: 16px;
-    transition: var(--Netfolio-transition);
+    transition: var(--Portfolio-transition);
 }
+
 .form-group textarea {
     min-height: 150px;
     resize: vertical;
@@ -840,20 +808,20 @@ img {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--Netfolio-red);
-    background-color: var(--Netfolio-hover-gray);
+    border-color: var(--Portfolio-accent);
+    background-color: var(--Portfolio-hover);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: var(--Netfolio-text-gray);
+    color: var(--Portfolio-text-secondary);
 }
 
 /* Footer */
-.Netfolio-footer {
-    background-color: var(--Netfolio-black);
+.Portfolio-footer {
+    background-color: var(--Portfolio-secondary);
     padding: 60px 0 20px;
-    border-top: 1px solid var(--Netfolio-white);
+    border-top: 1px solid var(--Portfolio-primary);
 }
 
 .footer-content {
@@ -864,9 +832,8 @@ img {
 }
 
 .footer-logo h2 {
-    color: var(--Netfolio-red);
+    color: var(--Portfolio-text-primary);
     font-size: 28px;
-    
 }
 
 .footer-links ul {
@@ -875,28 +842,76 @@ img {
 }
 
 .footer-links a {
-    color: var(--Netfolio-text-gray);
+    color: var(--Portfolio-text-secondary);
     font-size: 14px;
 }
 
 .footer-links a:hover {
-    color: var(--Netfolio-white);
-}
-
-.footer-social {
-    display: flex;
-    gap: 15px;
+    color: var(--Portfolio-accent);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid var(--Netfolio-white);
+    border-top: 1px solid var(--Portfolio-primary);
 }
 
 .footer-bottom p {
-    color: var(--Netfolio-text-gray);
+    color: var(--Portfolio-text-secondary);
     font-size: 14px;
+}
+
+/* Resume Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--Portfolio-secondary);
+    margin: 5% auto;
+    padding: 25px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: var(--Portfolio-card-shadow);
+    position: relative;
+}
+
+.close-modal {
+    color: var(--Portfolio-text-primary);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--Portfolio-transition);
+}
+
+.close-modal:hover {
+    color: var(--Portfolio-accent);
+}
+
+.resume-container {
+    margin: 20px 0;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--Portfolio-primary);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 /* Responsive Styles */
@@ -934,17 +949,78 @@ img {
     }
 }
 
+.Portfolio-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Portfolio-nav {
+    margin-left: auto; /* This will push the nav to the right */
+}
+
+.Portfolio-nav ul {
+    display: flex;
+    gap: 25px;
+    justify-content: flex-end; /* Align items to the right */
+}
 @media (max-width: 768px) {
-    .Netfolio-header .container {
+    .Portfolio-header .container {
         flex-direction: column;
         gap: 15px;
+        padding: 15px;
     }
-    
-    .Netfolio-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+
+    .mobile-menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--Portfolio-text-primary);
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
-    
+
+    .Portfolio-nav {
+        display: none;
+        width: 100%;
+        background-color: var(--Portfolio-primary); /* Solid creamy yellow background */
+        padding: 20px 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 8px var(--Portfolio-shadow);
+    }
+
+    .Portfolio-nav.active {
+        display: block;
+    }
+
+    .Portfolio-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 0;
+    }
+
+    .Portfolio-nav a {
+        color: var(--Portfolio-text-primary);
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        display: block;
+    }
+
+    .Portfolio-nav a:hover {
+        color: var(--Portfolio-accent);
+        background-color: var(--Portfolio-secondary);
+    }
+
     .footer-content {
         flex-direction: column;
         gap: 20px;
@@ -952,10 +1028,6 @@ img {
     }
     
     .footer-links ul {
-        justify-content: center;
-    }
-    
-    .footer-social {
         justify-content: center;
     }
 }
@@ -973,6 +1045,7 @@ img {
         grid-template-columns: 1fr;
     }
 }
+
 /* Name rotation animation */
 @keyframes nameFade {
     0% { opacity: 1; }
@@ -982,68 +1055,4 @@ img {
 
 .name-fade {
     animation: nameFade 0.5s ease;
-}
-
-.hero-title {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    transition: opacity 0.3s ease;
-}
-
-
-
-
-/* Resume Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-}
-
-.modal-content {
-    background-color: var(--Netfolio-medium-gray);
-    margin: 5% auto;
-    padding: 25px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 900px;
-    box-shadow: var(--Netfolio-card-shadow);
-    position: relative;
-}
-
-.close-modal {
-    color: var(--Netfolio-white);
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: var(--Netfolio-transition);
-}
-
-.close-modal:hover {
-    color: var(--Netfolio-red);
-}
-
-.resume-container {
-    margin: 20px 0;
-    border-radius: 4px;
-    overflow: hidden;
-    background-color: var(--Netfolio-dark-gray);
-}
-
-.modal-footer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
 }

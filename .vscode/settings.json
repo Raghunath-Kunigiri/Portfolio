@@ -1,5 +1,6 @@
 {
     "codedeploy.region": "us-east-1",
     "codedeploy.applicationName": "Netfolio",
-    "codedeploy.isApplicationWorkspace": true
+    "codedeploy.isApplicationWorkspace": true,
+    "search.useGlobalIgnoreFiles": false
 }
