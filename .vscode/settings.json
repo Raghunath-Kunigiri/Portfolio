@@ -2,5 +2,6 @@
     "codedeploy.region": "us-east-1",
     "codedeploy.applicationName": "Netfolio",
     "codedeploy.isApplicationWorkspace": true,
-    "search.useGlobalIgnoreFiles": false
+    "search.useGlobalIgnoreFiles": false,
+    "liveServer.settings.port": 5501
 }
